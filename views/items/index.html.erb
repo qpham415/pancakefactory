@@ -1,0 +1,22 @@
+<h1>All Items</h1>
+<table border="1" style="width:100%">
+  <tr>
+    <th>Title</th>
+    <th>Price Range</th>
+  <tr>
+
+  <% @item.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.price_range %></td>
+    </tr>
+  <% end %>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.title %></td>
+      <td><%= product.price_range %></td>
+    </tr>
+  <% end %>
+
+</table>
