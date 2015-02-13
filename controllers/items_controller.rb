@@ -6,15 +6,19 @@ class ItemsController < ApplicationController
     @callback_url = "http://#{current_host}/login"
   end
 
-  def index
-    @item = Item.all
 
-    # get 10 products
+
+  def index
+    @items = Item.all
+
     @products = ShopifyAPI::Product.find(:all, :params => {:limit => 10})
   end
 
   def show
     @item = Item.find(params[:id])
+
+    Item.import
+    
   end
 
   def new
@@ -25,6 +29,13 @@ class ItemsController < ApplicationController
 
     @item.save
     redirect_to @item
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+
+    redirect_to items_path
   end
 
   private

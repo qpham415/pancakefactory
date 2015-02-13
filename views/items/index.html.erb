@@ -5,10 +5,13 @@
     <th>Price Range</th>
   <tr>
 
-  <% @item.each do |item| %>
+  <% @items.each do |item| %>
     <tr>
       <td><%= item.title %></td>
       <td><%= item.price_range %></td>
+      <td><%= link_to 'Show', item_path(item) %></td>
+      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+      <td><%= link_to 'Destroy', item_path(item), method: :delete, data: { confirm:'Are you sure?'} %></td>
     </tr>
   <% end %>
 
@@ -16,7 +19,9 @@
     <tr>
       <td><%= product.title %></td>
       <td><%= product.price_range %></td>
+      <td><%= product.id %></td>
     </tr>
   <% end %>
 
 </table>
+<br><br>
