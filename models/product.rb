@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  has_many :variants
 
   def self.import
     @shopify_products = ShopifyAPI::Product.find(:all)
@@ -16,10 +17,11 @@ class Product < ActiveRecord::Base
       product.published_at = shopify_product.published_at
       product.published_scope = shopify_product.published_scope
       product.tags = shopify_product.tags
-      product.updated_ad = shopify_product.updated_at
+      product.shopify_updated_at = shopify_product.updated_at
       product.vendor = shopify_product.vendor
       product.save
     end
+
   end
 
 end

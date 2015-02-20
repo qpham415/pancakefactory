@@ -1,0 +1,17 @@
+<%= form_for([@product, @product.variants.build]) do |f| %>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :barcode %><br>
+    <%= f.text_field :barcode %>
+  </p>
+  <p>
+    <%= f.label :grams %><br>
+    <%= f.text_field :grams %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

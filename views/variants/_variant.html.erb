@@ -1,0 +1,19 @@
+<p>
+  <strong>price:</strong>
+  <%= variant.price %>
+</p>
+<p>
+  <strong>barcode:</strong>
+  <%= variant.barcode %>
+</p>
+<p>
+  <strong>grams:</strong>
+  <%= variant.grams %>
+</p>
+<p>
+  <strong>created_at:</strong>
+  <%= variant.created_at %>
+</p>
+<p>
+  <%= link_to 'Delete', [variant.product, variant], method: :delete %>
+</p>

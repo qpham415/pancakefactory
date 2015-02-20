@@ -26,7 +26,10 @@
       <td><%= t.id %></td>
       <td><%= t.title %></td>
       <td><%= t.body_html %></td>
-      <td><%= t.variants[0].price %></td>
+      <% t.variants.each do |product_variant| %>
+        <td><%= product_variant.price %></td>
+        <td><%= product_variant.product_id %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

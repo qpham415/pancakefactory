@@ -1,13 +1,69 @@
 <h1>Product Information</h1>
 <p>
-  <strong>Shopify ID:</strong>
+  <strong>shopify_id:</strong>
   <%= @product.shopify_id %>
 </p>
 <p>
-  <strong>Title:</strong>
+  <strong>title:</strong>
   <%= @product.title %>
 </p>
 <p>
-  <strong>Price:</strong>
-  <%= @product.price %>
+  <strong>id:</strong>
+  <%= @product.shopify_id %>
+</p>
+<p>
+  <strong>body_html:</strong>
+  <%= @product.body_html %>
+</p>
+<p>
+  <strong>created_at:</strong>
+  <%= @product.shopify_created_at %>
+</p>
+<p>
+  <strong>handle:</strong>
+  <%= @product.handle %>
+</p>
+<p>
+  <strong>images:</strong>
+  <%= @product.images %>
+</p>
+<p>
+  <strong>options:</strong>
+  <%= @product.options %>
+</p>
+<p>
+  <strong>product_type:</strong>
+  <%= @product.product_type %>
+</p>
+<p>
+  <strong>published_at:</strong>
+  <%= @product.published_at %>
+</p>
+<p>
+  <strong>published_scope:</strong>
+  <%= @product.published_scope %>
+</p>
+<p>
+  <strong>tags:</strong>
+  <%= @product.tags %>
+</p>
+<p>
+  <strong>updated_at:</strong>
+  <%= @product.shopify_updated_at %>
+</p>
+<p>
+  <strong>vendor:</strong>
+  <%= @product.vendor %>
+</p>
+<br><br>
+
+<h2>Variants</h2>
+<%= render @product.variants %>
+
+<h2>Add a variant</h2>
+<%= render 'variants/form' %>
+
+<br><br>
+<p>
+  <%= link_to 'Back to Products', products_path%>
 </p>
