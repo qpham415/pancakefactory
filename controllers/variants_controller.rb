@@ -11,11 +11,12 @@ class VariantsController < ApplicationController
     @variant = @product.variants.create(variant_params)
     Variant.import
     redirect_to product_path(@product)
+  end
 
+  def new
   end
 
   def index
-    Variant.import
   end
 
   def destroy
