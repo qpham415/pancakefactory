@@ -14,13 +14,15 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    Order.import
   end
 
   def new
   end
 
   def create
-    @order = Customer.new(customer_params)
+    @order = Order.new(order_params)
     @order.save
 
     redirect_to @order
@@ -35,6 +37,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:customer).permit!
+      params.require(:order).permit!
     end
 end

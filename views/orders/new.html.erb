@@ -1,17 +1,19 @@
 <%= form_for :order, url: orders_path  do |f| %>
   <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.label :order_number %><br>
+    <%= f.text_field :order_number %>
   </p>
-
   <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.label :billing_address_first_name %><br>
+    <%= f.text_field :billing_address_first_name %>
   </p>
-
   <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.label :billing_address_last_name %><br>
+    <%= f.text_field :billing_address_last_name %>
+  </p>
+  <p>
+    <%= f.label :subtotal_price %><br>
+    <%= f.text_field :subtotal_price %>
   </p>
 
   <p>

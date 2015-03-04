@@ -1,37 +1,39 @@
 <h1>All Orders</h1>
 <table border="1" style="width:100%">
   <tr>
-    <th>Shopify ID</th>
-    <th>first_name</th>
-    <th>last_name</th>
-    <th>email:</th>
-    <th>default_address_address1</th>
-    <th>default_address_city</th>
+    <th>order_number</th>
+    <th>billing_address_first_name</th>
+    <th>billing_address_last_name</th>
+    <th>financial_status</th>
+    <th>fulfillment_status</th>
+    <th>subtotal_price</th>
   <tr>
 
-  <% @customers.each do |customer| %>
+  <% @orders.each do |order| %>
     <tr>
-      <td><%= customer.shopify_id %></td>
-      <td><%= customer.first_name %></td>
-      <td><%= customer.last_name %></td>
-      <td><%= customer.email %></td>
-      <td><%= customer.default_address_address1 %></td>
-      <td><%= customer.default_address_city %></td>
-      <td><%= link_to 'Show', customer_path(customer) %></td>
-      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-      <td><%= link_to 'Destroy', customer_path(customer), method: :delete, data: { confirm:'Are you sure?'} %></td>
+      <td><%= order.order_number %></td>
+      <td><%= order.billing_address_first_name %></td>
+      <td><%= order.billing_address_last_name %></td>
+      <td><%= order.financial_status %></td>
+      <td><%= order.fulfillment_status %></td>
+      <td><%= order.subtotal_price %></td>
+      <td><%= link_to 'Show', order_path(order) %></td>
+      <td><%= link_to 'Edit', edit_order_path(order) %></td>
+      <td><%= link_to 'Destroy', order_path(order), method: :delete, data: { confirm:'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>
 <br><br><br>
 <table border="1" style="width:100%">
-  <% @shopify_customers.each do |t| %>
+  <% @shopify_orders.each do |t| %>
     <tr>
-      <td><%= t.id %></td>
-      <td><%= t.first_name %></td>
-      <td><%= t.last_name %></td>
-      <td><%= t.default_address.city %></td>
-      <td><%= t.default_address.address1 %></td>
+      <td><%= t.order_number %></td>
+      <td><%= t.billing_address.first_name %></td>
+      <td><%= t.billing_address.last_name %></td>
+      <td><%= t.financial_status %></td>
+      <td><%= t.tax_lines[0].price %></td>
+      <td><%= t.line_items[0].fulfillable_quantity %></td>
+      <td><%= t.shipping_lines[0].price %></td>
     </tr>
   <% end %>
 </table>

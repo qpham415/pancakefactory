@@ -1,125 +1,73 @@
-<h1>Customer Information</h1>
+<h1>Order Information</h1>
 <p>
-  <strong>accepts_marketing:</strong>
-  <%= @customer.accepts_marketing %>
+  <strong>billing_address_address1:</strong>
+  <%= @order.billing_address_address1 %>
 </p>
 <p>
-  <strong>shopify_created_at:</strong>
-  <%= @customer.shopify_created_at %>
+  <strong>billing_address_address2:</strong>
+  <%= @order.billing_address_address2 %>
 </p>
 <p>
-  <strong>default_address_address1:</strong>
-  <%= @customer.default_address_address1 %>
+  <strong>billing_address_city:</strong>
+  <%= @order.billing_address_city %>
 </p>
 <p>
-  <strong>default_address_address2:</strong>
-  <%= @customer.default_address_address2 %>
+  <strong>billing_address_company:</strong>
+  <%= @order.billing_address_company %>
 </p>
 <p>
-  <strong>default_address_city:</strong>
-  <%= @customer.default_address_city %>
+  <strong>billing_address_country:</strong>
+  <%= @order.billing_address_country %>
 </p>
 <p>
-  <strong>default_address_company:</strong>
-  <%= @customer.default_address_company %>
+  <strong>billing_address_first_name:</strong>
+  <%= @order.billing_address_first_name %>
 </p>
 <p>
-  <strong>default_address_country:</strong>
-  <%= @customer.default_address_country %>
+  <strong>billing_address_id:</strong>
+  <%= @order.billing_address_id %>
 </p>
 <p>
-  <strong>default_address_first_name:</strong>
-  <%= @customer.default_address_first_name %>
+  <strong>billing_address_last_name:</strong>
+  <%= @order.billing_address_last_name %>
 </p>
 <p>
-  <strong>default_address_id:</strong>
-  <%= @customer.default_address_id %>
+  <strong>billing_address_phone:</strong>
+  <%= @order.billing_address_phone %>
 </p>
 <p>
-  <strong>default_address_last_name:</strong>
-  <%= @customer.default_address_last_name %>
+  <strong>billing_address_province:</strong>
+  <%= @order.billing_address_province %>
 </p>
 <p>
-  <strong>default_address_phone:</strong>
-  <%= @customer.default_address_phone %>
+  <strong>billing_address_zip:</strong>
+  <%= @order.billing_address_zip %>
 </p>
 <p>
-  <strong>default_address_province:</strong>
-  <%= @customer.default_address_province %>
+  <strong>billing_address_name:</strong>
+  <%= @order.billing_address_name %>
 </p>
 <p>
-  <strong>default_address_zip:</strong>
-  <%= @customer.default_address_zip %>
+  <strong>billing_address_province_code:</strong>
+  <%= @order.billing_address_province_code %>
 </p>
 <p>
-  <strong>default_address_province_code:</strong>
-  <%= @customer.default_address_province_code %>
+  <strong>billing_address_country_code:</strong>
+  <%= @order.billing_address_country_code %>
 </p>
 <p>
-  <strong>default_address_country_code:</strong>
-  <%= @customer.default_address_country_code %>
+  <strong>billing_address_default:</strong>
+  <%= @order.billing_address_default %>
 </p>
 <p>
-  <strong>default_address_default:</strong>
-  <%= @customer.default_address_default %>
+  <strong>browser_ip:</strong>
+  <%= @order.browser_ip %>
 </p>
 <p>
-  <strong>email:</strong>
-  <%= @customer.email %>
-</p>
-<p>
-  <strong>first_name:</strong>
-  <%= @customer.first_name %>
-</p>
-<p>
-  <strong>email:</strong>
-  <%= @customer.email %>
-</p>
-<p>
-  <strong>shopify_id:</strong>
-  <%= @customer.shopify_id %>
-</p>
-<p>
-  <strong>last_name:</strong>
-  <%= @customer.last_name %>
-</p>
-<p>
-  <strong>last_order_id:</strong>
-  <%= @customer.last_order_id %>
-</p>
-<p>
-  <strong>last_order_name:</strong>
-  <%= @customer.last_order_name %>
-</p>
-<p>
-  <strong>note:</strong>
-  <%= @customer.note %>
-</p>
-<p>
-  <strong>orders_count:</strong>
-  <%= @customer.orders_count %>
-</p>
-<p>
-  <strong>state:</strong>
-  <%= @customer.state %>
-</p>
-<p>
-  <strong>tags:</strong>
-  <%= @customer.tags %>
-</p>
-<p>
-  <strong>total_spent:</strong>
-  <%= @customer.total_spent %>
-</p>
-<p>
-  <strong>updated_at:</strong>
-  <%= @customer.updated_at %>
-</p>
-<p>
-  <strong>verified_email:</strong>
-  <%= @customer.verified_email %>
+  <strong>order_number:</strong>
+  <%= @order.order_number %>
 </p>
 <br><br>
 <p>
-  <%= link_to 'Back to Customers', customers_path%>
+  <%= link_to 'Back to Orders', orders_path%>
 </p>
