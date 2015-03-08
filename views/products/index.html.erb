@@ -19,7 +19,9 @@
     </tr>
   <% end %>
 </table>
-<br><br><br>
+<br>
+
+<h1>Shopify Products</h1>
 <table border="1" style="width:100%">
   <% @shopify_products.each do |t| %>
     <tr>
@@ -33,3 +35,13 @@
     </tr>
   <% end %>
 </table>
+<br><br><br>
+<h1>Variants</h1>
+<% @variants.each do |v| %>
+<p>shopify_id: <%= v.shopify_id %> , grams: <%= v.grams %>, product_id: <%= v.product_id %></p>
+<% end %>
+
+<h1>Shopify Variants</h1>
+<% @shopify_variants.each do |f| %>
+<p>id: <%= f.id %> , grams: <%= f.grams %>, product_id: <%= f.product_id %></p>
+<% end %>

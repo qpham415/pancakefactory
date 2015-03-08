@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  has_many :variants, dependent: :destroy, :foreign_key => :shopify_product_id, :class_name => 'Variant'
+  has_many :variants, :primary_key => :shopify_id, :dependent => :destroy
 
   def self.import
     @shopify_products = ShopifyAPI::Product.find(:all)

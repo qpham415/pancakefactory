@@ -8,14 +8,15 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-
     @shopify_products = ShopifyAPI::Product.find(:all)
 
-    @product_attributes = ["id","title","price_range"]
+    @variants = Variant.all
+    @shopify_variants = ShopifyAPI::Variant.find(:all)
   end
 
   def show
     @product = Product.find(params[:id])
+    @variants = Variant.all
 
     Product.import
   end
