@@ -1,4 +1,6 @@
-<h1>All Products</h1>
+<p style="font-size: 20px"><%= link_to 'Import Shopify Products', new_product_path %></p>
+<br><br><br>
+<h1>Products</h1>
 <table border="1" style="width:100%">
   <tr>
     <th>Shopify ID</th>
@@ -19,8 +21,7 @@
     </tr>
   <% end %>
 </table>
-<br>
-
+<br><br>
 <h1>Shopify Products</h1>
 <table border="1" style="width:100%">
   <% @shopify_products.each do |t| %>

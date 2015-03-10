@@ -28,12 +28,30 @@
   <% @shopify_orders.each do |t| %>
     <tr>
       <td>order_number: <%= t.order_number %></td>
-      <td>first_name: <%= t.billing_address.first_name %></td>
-      <td>last_name: <%= t.billing_address.last_name %></td>
-      <td>financial_status: <%= t.financial_status %></td>
-      <td>tax_lines[0]_price<%= t.tax_lines[0].price %></td>
-      <td>line_items[0]_.fulfillable_quantity: <%= t.line_items[0].fulfillable_quantity %></td>
-      <td><%= t.shipping_lines[0].price %></td>
+      <td>name: <%= t.billing_address.first_name %> <%= t.billing_address.last_name %></td>
+      <td>shipping_lines[0].price: <%= t.shipping_lines[0].price %></td>
     </tr>
+    <th>line_items</th>
+    <% t.line_items.each do |f| %>
+      <tr>
+        <td>title: <%= f.title %></td>
+        <td>price: <%= f.price %></td>
+      </tr>
+    <% end %>
+    <th>shipping_lines</th>
+    <% t.shipping_lines.each do |s| %>
+      <tr>
+        <td>code: <%= s.code %></td>
+        <td>price: <%= s.price %></td>
+      </tr>
+    <% end %>
+    <th>tax_lines</th>
+    <% t.tax_lines.each do |t| %>
+      <tr>
+        <td>rate: <%= t.rate %></td>
+        <td>price: <%= t.price %></td>
+        <td>title: <%= t.title %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>

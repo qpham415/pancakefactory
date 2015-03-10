@@ -17,11 +17,12 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @variants = Variant.all
-
-    Product.import
   end
 
   def new
+    Product.import
+    Variant.import
+    redirect_to products_path
   end
 
   def create
@@ -29,6 +30,9 @@ class ProductsController < ApplicationController
 
     @product.save
     redirect_to @product
+  end
+
+  def update
   end
 
   def destroy
