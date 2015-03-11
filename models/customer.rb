@@ -1,4 +1,6 @@
 class Customer < ActiveRecord::Base
+  has_many :addresses, :primary_key => :shopify_id, :dependent => :destroy
+
   def self.import
     @shopify_customers = ShopifyAPI::Customer.find(:all)
     @shopify_customers.each do |shopify_customer|

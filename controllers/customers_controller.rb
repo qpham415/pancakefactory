@@ -8,17 +8,18 @@ class CustomersController < ApplicationController
 
   def index
     @customers = Customer.all
-
     @shopify_customers = ShopifyAPI::Customer.find(:all)
   end
 
   def show
     @customer = Customer.find(params[:id])
-
-    Customer.import
+    @addresses = Address.all
   end
 
   def new
+    Customer.import
+    Address.import
+    redirect_to customers_path
   end
 
   def create

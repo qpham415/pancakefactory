@@ -1,10 +1,14 @@
-<h1>All Orders</h1>
+<p style="font-size: 20px"><%= link_to 'Import Shopify Customers', new_customer_path %></p>
+
+<br><br><br>
+
+<h1>All Customers</h1>
 <table border="1" style="width:100%">
   <tr>
-    <th>Shopify ID</th>
+    <th>shopify_id</th>
     <th>first_name</th>
     <th>last_name</th>
-    <th>email:</th>
+    <th>email</th>
     <th>default_address_address1</th>
     <th>default_address_city</th>
   <tr>
@@ -18,20 +22,39 @@
       <td><%= customer.default_address_address1 %></td>
       <td><%= customer.default_address_city %></td>
       <td><%= link_to 'Show', customer_path(customer) %></td>
-      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-      <td><%= link_to 'Destroy', customer_path(customer), method: :delete, data: { confirm:'Are you sure?'} %></td>
+      <td><%= link_to 'Delete', customer_path(customer), method: :delete, data: { confirm:'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>
+
 <br><br><br>
+
+<h1>Shopify Customers</h1>
 <table border="1" style="width:100%">
+  <tr>
+    <th>id</th>
+    <th>first_name</th>
+    <th>last_name</th>
+    <th>default_address_address1</th>
+    <th>default_address_city</th>
+    <th>default_address_province_code</th>
+  </tr>
   <% @shopify_customers.each do |t| %>
     <tr>
       <td><%= t.id %></td>
       <td><%= t.first_name %></td>
       <td><%= t.last_name %></td>
-      <td><%= t.default_address.city %></td>
       <td><%= t.default_address.address1 %></td>
+      <td><%= t.default_address.city %></td>
+      <td><%= t.default_address.province_code %></td>
+      <% t.addresses.each do |f| %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.address1 %></td>
+          <td><%= f.city %></td>
+          <td><%= f.province_code %></td>
+        </tr>
+      <% end %>
     </tr>
   <% end %>
 </table>
