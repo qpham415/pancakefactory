@@ -3,9 +3,11 @@
 <h1>Products</h1>
 <table border="1" style="width:100%">
   <tr>
-    <th>Shopify ID</th>
-    <th>Title</th>
-    <th>Price</th>
+    <th>shopify_id</th>
+    <th>title</th>
+    <th>vendor</th>
+    <th>handle</th>
+    <th>shopify_created_at</th>
   <tr>
 
   <% @products.each do |product| %>
@@ -13,36 +15,44 @@
       <td><%= product.shopify_id %></td>
       <td><%= product.title %></td>
       <td><%= product.vendor %></td>
-      <td><%= product.body_html %></td>
+      <td><%= product.handle %></td>
       <td><%= product.shopify_created_at %></td>
       <td><%= link_to 'Show', product_path(product) %></td>
-      <td><%= link_to 'Edit', edit_product_path(product) %></td>
-      <td><%= link_to 'Destroy', product_path(product), method: :delete, data: { confirm:'Are you sure?'} %></td>
+      <td><%= link_to 'Delete', product_path(product), method: :delete, data: { confirm:'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>
+
 <br><br>
+
 <h1>Shopify Products</h1>
 <table border="1" style="width:100%">
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>vendor</th>
+    <th>handle</th>
+    <th>created_at</th>
+  </tr>
+
   <% @shopify_products.each do |t| %>
     <tr>
       <td><%= t.id %></td>
       <td><%= t.title %></td>
-      <td><%= t.body_html %></td>
-      <% t.variants.each do |product_variant| %>
-        <td><%= product_variant.price %></td>
-        <td><%= product_variant.product_id %></td>
-      <% end %>
+      <td><%= t.vendor %></td>
+      <td><%= t.handle %></td>
+      <td><%= t.created_at %></td>
     </tr>
-  <% end %>
-</table>
-<br><br><br>
-<h1>Variants</h1>
-<% @variants.each do |v| %>
-<p>shopify_id: <%= v.shopify_id %> , grams: <%= v.grams %>, product_id: <%= v.product_id %></p>
-<% end %>
 
-<h1>Shopify Variants</h1>
-<% @shopify_variants.each do |f| %>
-<p>id: <%= f.id %> , grams: <%= f.grams %>, product_id: <%= f.product_id %></p>
-<% end %>
+    <% t.variants.each do |product_variant| %>
+      <tr>
+        <td>id: <%= product_variant.id %></td>
+        <td>product_id: <%= product_variant.product_id %></td>
+        <td>price: <%= product_variant.price %></td>
+        <td>title: <%= product_variant.title %></td>
+      </tr>
+    <% end %>
+
+  <% end %>
+
+</table>
