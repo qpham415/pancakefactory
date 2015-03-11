@@ -18,14 +18,15 @@
       <td><%= order.fulfillment_status %></td>
       <td><%= order.subtotal_price %></td>
       <td><%= link_to 'Show', order_path(order) %></td>
-      <td><%= link_to 'Edit', edit_order_path(order) %></td>
       <td><%= link_to 'Destroy', order_path(order), method: :delete, data: { confirm:'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>
 <br><br><br>
-<table border="1" style="width:100%">
-  <% @shopify_orders.each do |t| %>
+
+<h1>Shopify Orders</h1>
+<% @shopify_orders.each do |t| %>
+  <table border="1" style="width:100%">
     <tr>
       <td>order_number: <%= t.order_number %></td>
       <td>name: <%= t.billing_address.first_name %> <%= t.billing_address.last_name %></td>
@@ -53,6 +54,8 @@
         <td>title: <%= t.title %></td>
       </tr>
     <% end %>
-  <% end %>
-</table>
+  </table>
+  <br><br>
+<% end %>
+
 <h3><%= link_to 'Back Home', controller: 'home' %></h3>
