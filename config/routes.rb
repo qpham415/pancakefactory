@@ -9,10 +9,15 @@ Rails.application.routes.draw do
   end
 
   resources :items
+
   resources :products do
     resources :variants
   end
-  resources :orders
+
+  resources :orders do
+    resources :fulfillments
+  end
+
   resources :customers do
     resources :addresses
   end

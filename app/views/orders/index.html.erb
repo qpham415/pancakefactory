@@ -1,3 +1,5 @@
+<p style="font-size: 20px"><%= link_to 'Import Shopify Orders', new_order_path %></p>
+<br><br><br>
 <h1>All Orders</h1>
 <table border="1" style="width:100%">
   <tr>
@@ -28,10 +30,19 @@
 <% @shopify_orders.each do |t| %>
   <table border="1" style="width:100%">
     <tr>
+      <td>id: <%= t.id %></td>
       <td>order_number: <%= t.order_number %></td>
       <td>name: <%= t.billing_address.first_name %> <%= t.billing_address.last_name %></td>
-      <td>shipping_lines[0].price: <%= t.shipping_lines[0].price %></td>
     </tr>
+    <th>fulfillments</th>
+    <%= t.fulfillments.each do |q| %>
+      <tr>
+        <td>id: <%= q.id %></td>
+        <td>tracking_number: <%= q.tracking_number %></td>
+        <td>created_at: <%= q.created_at %></td>
+        <td>
+      </tr>
+    <% end %>
     <th>line_items</th>
     <% t.line_items.each do |f| %>
       <tr>

@@ -68,6 +68,11 @@
   <%= @order.order_number %>
 </p>
 <br><br>
+
+<h1>Fulfillments</h1>
+<%= render @order.fulfillments %>
+<br><br>
+
 <p>
   <%= link_to 'Back to Orders', orders_path%>
 </p>

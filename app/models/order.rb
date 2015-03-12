@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  has_many :fulfillments, :primary_key => :shopify_id, :dependent => :destroy
+
   def self.import
     @shopify_orders = ShopifyAPI::Order.find(:all)
     @shopify_orders.each do |shopify_order|

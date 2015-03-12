@@ -14,11 +14,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-
-    Order.import
   end
 
   def new
+    Order.import
+    Fulfillment.import
+    redirect_to orders_path
   end
 
   def create
