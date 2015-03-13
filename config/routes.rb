@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :orders do
     resources :fulfillments
+    resources :line_items
   end
 
   resources :customers do

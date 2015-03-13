@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312224916) do
+ActiveRecord::Schema.define(version: 20150312235050) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "shopify_id"
@@ -83,6 +83,30 @@ ActiveRecord::Schema.define(version: 20150312224916) do
     t.float    "price_range"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "fulfillable_quantity"
+    t.text     "fulfillment_service"
+    t.text     "fulfillment_status"
+    t.float    "grams"
+    t.integer  "shopify_id"
+    t.float    "price"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.boolean  "requires_shipping"
+    t.text     "sku"
+    t.text     "title"
+    t.integer  "variant_id"
+    t.text     "variant_title"
+    t.text     "vendor"
+    t.text     "name"
+    t.boolean  "gift_card"
+    t.boolean  "taxable"
+    t.float    "total_discount"
+    t.integer  "order_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "orders", force: :cascade do |t|

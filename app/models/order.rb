@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
   has_many :fulfillments, :primary_key => :shopify_id, :dependent => :destroy
+  has_many :line_items, :primary_key => :shopify_id, :dependent => :destroy
 
   def self.import
     @shopify_orders = ShopifyAPI::Order.find(:all)

@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
   def new
     Order.import
     Fulfillment.import
+    LineItem.import
     redirect_to orders_path
   end
 

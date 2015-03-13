@@ -73,6 +73,10 @@
 <%= render @order.fulfillments %>
 <br><br>
 
+<h1>Line Items</h1>
+<%= render @order.line_items %>
+<br><br>
+
 <p>
   <%= link_to 'Back to Orders', orders_path%>
 </p>

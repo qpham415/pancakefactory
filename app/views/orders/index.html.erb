@@ -34,15 +34,6 @@
       <td>order_number: <%= t.order_number %></td>
       <td>name: <%= t.billing_address.first_name %> <%= t.billing_address.last_name %></td>
     </tr>
-    <th>fulfillments</th>
-    <%= t.fulfillments.each do |q| %>
-      <tr>
-        <td>id: <%= q.id %></td>
-        <td>tracking_number: <%= q.tracking_number %></td>
-        <td>created_at: <%= q.created_at %></td>
-        <td>
-      </tr>
-    <% end %>
     <th>line_items</th>
     <% t.line_items.each do |f| %>
       <tr>
