@@ -1,4 +1,5 @@
 Shopify API data pull
 
 -Import all data into from Shopify API
+
 -Import all records to local database
