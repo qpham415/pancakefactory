@@ -1,3 +1,3 @@
-Shopify API data pull
--Import all data into from Shopify API
--Import all records to local database
+<strong>Shopify API data pull</strong>
+<br>-Import all data into from Shopify API
+<br>-Import all records to local database
